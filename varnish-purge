@@ -1,7 +1,7 @@
 #!/bin/bash
 ###################################################
 #
-# varnish-purge clears cache on all UNI web servers
+# varnish-purge clears cache on all specifed eb servers
 # that have varnish installed.
 #
 #
