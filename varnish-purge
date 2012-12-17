@@ -1,0 +1,28 @@
+#!/bin/bash
+###################################################
+#
+# varnish-purge clears cache on all UNI web servers
+# that have varnish installed.
+#
+#
+# Author: Ryan Murphy <ryan.murphy@rychannel.com>
+# Date: 12-17-2012
+###################################################
+
+#WWW_SERVERS should be a space seperated string
+#EXAMPLE:
+#WWW_SERVERS="wcntest.no.com wcn1.no.com wcn2.no.com wcn3.no.com wcn4.no.com"
+
+WWW_SERVERS="wcntest.no.com"
+
+for i in $WWW_SERVERS
+	do
+		#Clear everything
+		curl -X BAN http://$i/
+
+		#Clear specific directory or file
+		#curl -X BAN http://$i/index.php
+		#curl -X BAN http://$i/drupal/
+	done
+
+
